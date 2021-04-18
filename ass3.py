@@ -85,3 +85,10 @@ for x in range(len(to_delete)):
             to_delete[y] = temp
 for x in to_delete:
     newArr.remove(newArr[x])
+
+    for x in newArr:
+    print(x.letter + " - " + str(round(x.num / len(f) , 3)) + " - " + x.code)
+def finder(nodes, letter):
+    for x in nodes:
+        if letter == x.letter:
+            return x.code
