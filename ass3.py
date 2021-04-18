@@ -39,3 +39,26 @@ def sortingFunciton(arr):
                 arr[x] = arr[y]
                 arr[y] = temp
     return arr
+
+arr = sortingFunciton(arr)
+for x in arr:
+    print(x.letter + " - " + str(x.num))
+counter = 1 
+while len(arr) != 1:
+    temp = Node()
+    temp.letter = "Node" + str(counter)
+    temp.num = arr[len(arr) - 1].num + arr[len(arr) - 2].num
+    temp.left = arr[len(arr) - 2]
+    temp.right = arr[len(arr) - 1]
+    
+    tempArr = []
+    print(temp.letter + ": " + temp.left.letter + ", " + temp.right.letter + " - " + " sum " + str(round(temp.num/len(f),3)))
+    
+    for x in range(len(arr) - 2):
+        tempArr.append(arr[x])
+    tempArr.append(temp)
+    arr = sortingFunciton(tempArr)
+    counter += 1
+    
+tempArr[0].letter     
+
