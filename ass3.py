@@ -92,3 +92,17 @@ def finder(nodes, letter):
     for x in nodes:
         if letter == x.letter:
             return x.code
+
+newstr = ""
+for x in f:
+    if x == ' ':
+        newstr += finder(newArr, 'space')
+        continue
+    if x == '\n':
+        newstr += finder(newArr, 'new_line')
+        continue
+    newstr += finder(newArr, x)
+
+text_file = open("ass3.txt", "w")
+n = text_file.write(newstr)
+text_file.close()
