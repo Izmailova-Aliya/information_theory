@@ -72,4 +72,16 @@ def tree(node, arr, s):
     return arr
 tarr = []
 newArr = tree(tempArr[0], tarr, "")
-newArr
+
+to_delete = []
+for x in range(len(newArr)):
+    if "Node" in newArr[x].letter:
+        to_delete.append(x)
+for x in range(len(to_delete)):
+    for y in range(x):
+        if to_delete[x] > to_delete[y]:
+            temp = to_delete[x]
+            to_delete[x] = to_delete[y]
+            to_delete[y] = temp
+for x in to_delete:
+    newArr.remove(newArr[x])
