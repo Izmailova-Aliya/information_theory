@@ -106,3 +106,10 @@ for x in f:
 text_file = open("ass3.txt", "w")
 n = text_file.write(newstr)
 text_file.close()
+
+text_file = open("ass3.txt", "r")
+text_file.read()
+print("Number of bits in the original text: " + str(len(f) * 8) + " bits")
+print("Number of bits in the compressed text: " + str(len(newstr)) + " bits")
+print("Compression ratio: " + str(len(f) * 8 / len(newstr)))
+print("Average code length: " + str(len(newstr) / len(f)))
