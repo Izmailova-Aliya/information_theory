@@ -22,3 +22,20 @@ class Node: #  for each letter creating node
     code = ""
     left = None
     right = None
+
+    arr = []
+for x in count.keys():
+    temp = Node()
+    temp.letter = x
+    temp.num = count[x]
+    arr.append(temp)
+arr
+
+def sortingFunciton(arr):
+    for x in range(len(arr)):
+        for y in range(x):
+            if arr[x].num > arr[y].num:
+                temp = arr[x]
+                arr[x] = arr[y]
+                arr[y] = temp
+    return arr
