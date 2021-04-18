@@ -62,3 +62,14 @@ while len(arr) != 1:
     
 tempArr[0].letter     
 
+def tree(node, arr, s):
+    if node == None:
+        return arr
+    tree(node.left, arr, s + "0")
+    node.code = s
+    arr.append(node)
+    tree(node.right, arr, s + "1")
+    return arr
+tarr = []
+newArr = tree(tempArr[0], tarr, "")
+newArr
